@@ -1,0 +1,12 @@
+site_name: Louierw Blog
+
+theme:
+  name: material
+
+  features:
+    - navigation.tabs
+
+plugins:
+  - search
+  - git-revision-date-localized
+
