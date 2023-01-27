@@ -1,10 +1,7 @@
 ---
-title: RustQLite Overview
+title: Home
 description: An brief summary of what this project was about
-date: 2023-01-27
 ---
-
-# Home
 
 ## About Me
 I am a recent graduate of a Combined Major in Business and Computer Science from the University of British Columbia in Vancouver, Canada. 
