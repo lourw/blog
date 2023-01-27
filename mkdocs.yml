@@ -5,8 +5,15 @@ theme:
 
   features:
     - navigation.tabs
+    - content.tabs.link
+    - navigation.indexes
 
 plugins:
   - search
   - git-revision-date-localized
+
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
 
