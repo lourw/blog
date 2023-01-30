@@ -3,7 +3,7 @@ title: Ownership
 description: An brief summary of what this project was about
 ---
 
-With C you are able to set pointers and reference them at will. The caveat being that C will not guarantee if your pointer will be referencing a valid memory address. Given the user has so much control over memory addresses, it also allows for bugs to creep into code. Points don't keep track of the validity of underlying values and it's totally possible to accidentally set a pointer pointing to null. 
+With C you are able to set pointers and reference them at will. The caveat being that C will not guarantee if your pointer will be referencing a valid memory address. Given the user has so much control over memory addresses, it also allows for bugs to creep into code. Pointers don't keep track of the validity of underlying values and it's totally possible to accidentally set a pointer pointing to null. 
 
 Rust circumvents the pointer issue by using its own system of memory management. A reference in rust is similar to C in that it acts like a pointer to data behind a memory address. However, it is guaranteed that the reference will point to valid data. 
 
@@ -58,7 +58,7 @@ Unlike C where two pointers to the same heap location may conflict, by enforcing
 ## Functions
 Passing variables into a function is similar to assigning values to new variables.
 
-### Why is this bad?
+### What can go wrong?
 ```rust
 fn ownership_func(value: String) {
     ...
@@ -134,6 +134,8 @@ fn main() {
 2. If an immutable reference already exists in scope, you cannot have a mutable reference
 
 ## Reference Syntax
+:warning: ... section in progress
+
 Similar to C, rust also uses the same symbols for reference/pointer manipulation. 
 
 === "Rust"
@@ -160,5 +162,6 @@ Similar to C, rust also uses the same symbols for reference/pointer manipulation
 
 ## References
 * [Rust docs](https://doc.rust-lang.org/std/primitive.pointer.html)
+* [Let's Get Rusty Youtube Video - Ownership](https://www.youtube.com/watch?v=VFIOSWy93H0)
 
 
