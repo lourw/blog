@@ -1,4 +1,4 @@
-There are two ways to store strings in rust:
+There are two ways to represent strings in rust:
 
 ## String literal
 
