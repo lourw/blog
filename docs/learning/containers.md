@@ -1,8 +1,60 @@
 ---
-title: Docker
+title: Containers
 description: An brief summary of what this project was about
 ---
 ## Overview
+
+I love using this diagram to illustrate the difference between containers and virtual machines. 
+
+=== "Virtual Machine"
+    ```mermaid
+    graph BT
+        A[Infrastructure] --> B
+        B[Hypervisor] --> C
+        subgraph C[VM1]
+            direction BT    
+            D[Guest OS] --> E[App]
+        end
+        B --> F
+        subgraph F[VM2]
+            direction BT    
+            G[Guest OS] --> H[App]
+        end
+        B --> I
+        subgraph I[VM3]
+            direction BT    
+            J[Guest OS] --> K[App]
+        end
+    ```
+
+    In order to create a virtual machine, you need to allocate enough CPU, memory and storage for each of the VM operating systems. Setting up these operating systems can also be a slow process. If your app is lightweight, more resources may be going into running the VM rather than to supporting your application. 
+
+    Note: Hypervisor is just the software application that creates virtual machines. 
+
+
+
+=== "Container"
+    ```mermaid
+    graph BT
+        A[Infrastructure] --> B
+        B[Host OS] --> C
+        C[Container Engine] --> D
+        subgraph D[Container 1]
+            E[App]
+        end
+        C --> F
+        subgraph F[Container 2]
+            G[App]
+        end
+        C --> H
+        subgraph H[Container 3]
+            I[App]
+        end
+    ```
+
+    We use a container engine (Docker, Podman) to create multiple containers for our apps. All of these apps are isolated from each other in a similar fashion to the VM example. However, the container engine running the containers utilizes the underlying host's operating system and infrastructure. You use less resources creating the containers and therefore more of your compute resources can go to running your apps. 
+
+    Note: Because you are not mocking the underlying OS of the machine, differing architectures may make containers incompatible with certain systems. You cannot run an x86 architecture container on ARM computers for example. 
 
 ## Terminology
 * **Image**: A "recipe" for creating a container
