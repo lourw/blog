@@ -172,3 +172,6 @@ EXPOSE 8080
 WORKDIR /app/backend/bin
 CMD ["./app"]
 ```
+
+## References
+* [Diagram Source](https://www.docker.com/resources/what-container/)
