@@ -44,3 +44,9 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
 
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/lourw
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/louie-weng/
