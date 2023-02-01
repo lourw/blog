@@ -57,59 +57,23 @@ I love using this diagram to illustrate the difference between containers and vi
     NOTE: Because you are not mocking the underlying OS of the machine, differing architectures may make containers incompatible with certain systems. You cannot run an x86 architecture container on ARM computers for example. 
 
 ## Terminology
-* **Image**: A "recipe" for creating a container
-* **Container**: 
-* **Docker**: A service on your computer that enables you to create a run lightweight and replicatable environments for code called containers. 
-Dockerfile: 
+* **Image**: A "recipe" for creating a container  
+* **Container**: Lightweight and replicatable environments for code   
+* **Docker**: A service on your computer that enables you to create a run  called containers.   
+* **Dockerfile**: A file with steps for creating a container image
 
 ## What are containers used for?
 - **Code Development**  
-    With a team of developers all using different devices, it can be time consuming setting up new environments on everyone's machines. Why not have an environment built into a container and allow developers to developer code right into it?
+    With a team of developers all using different devices, it can be time consuming setting up new environments on everyone's machines. Why not have an environment built into a container and allow developers to develope code right into it?
 - **Deployment**  
     Rather than setting up a VM with all the dependencies and manually configuring a deployment for a service, just run the service from a container. Not only is it faster to run a pre-configured environment on a container, but if something goes wrong, just swap your service out with another container. 
 
 ## Using Docker
-### Main Process
-1. Using a dockerfile, create an image
-2. Using the image, create a container
-3. Run the container
-
-#### Dockerfile
-When create your dockerfile, here are the main steps involved:  
-
-1. Use a base image
-    You can find a lot of free images online at [DockerHub](https://hub.docker.com/)
-
-    ```dockerfile
-    FROM ubuntu:latest
-    ```
-
-2. Set working directory
-    Set the directory within the container that you will be working from
-
-    ```dockerfile
-    WORKDIR /app
-    ```
-
-3. Copy source code 
-    Copy your code from your local directory to your dockerfile. Remember that your dockerfile sits in the root folder of your working directory, so you often can just copy everything from your working directory into the new image. 
-
-    ```dockerfile
-    COPY . .
-    ```
-
-4. Other commands
-    Whatever other commands you wish to do within your container
-        ```dockerfile
-        # run commands
-        RUN go mod download && go mod verify 
-
-        # set environment variables in your container
-        ENV GIN_MODE=release
-        ```
 
 #### Command-line Commands
-1. Build an image using your dockerfile
+1. Build an image using your Dockerfile. This assumes two things
+      1. You have a `Dockerfile` in the root directory of your local development folder
+      2. You are calling the following command in the directory your Dockerfile is located in
 
     ```bash
     docker build -t <image-name> .
@@ -123,6 +87,40 @@ When create your dockerfile, here are the main steps involved:
 
     NOTE: `-it` creates an interactive terminal session you can use to interact with your container. 
 
+#### Dockerfile
+When create your Dockerfile, here are the main steps involved:  
+
+1. Use a base image
+    You can find a lot of free images online at [DockerHub](https://hub.docker.com/)
+
+    ```Dockerfile
+    FROM ubuntu:latest
+    ```
+
+2. Set working directory
+    Set the directory within the container that you will be working from
+
+    ```Dockerfile
+    WORKDIR /app
+    ```
+
+3. Copy source code 
+    Copy your code from your local directory to your Dockerfile. Remember that your Dockerfile sits in the root folder of your working directory, so you often can just copy everything from your working directory into the new image. 
+
+    ```Dockerfile
+    COPY . .
+    ```
+
+4. Other commands
+    Whatever other commands you wish to do within your container
+        ```Dockerfile
+        # run commands
+        RUN go mod download && go mod verify 
+
+        # set environment variables in your container
+        ENV GIN_MODE=release
+        ```
+
 ## Multi-Stage Builds
 Sometimes you may want to break down your project into multiple stages to better organize and simplify the process. 
 
@@ -133,8 +131,21 @@ You have web-app that contains a backend and frontend. Your backend is written i
 2. Build your frontend client
 3. Combine both final assets into a container that will deploy both the frontend and backend
 
+Assume the following file structure
+
+```bash
+.
+├── backend/
+│   ├── go.mod
+│   └── src/
+├── frontend/
+│   ├── package.json
+│   └── src/
+└── Dockerfile
+```
+
 ### Sample Dockerfile
-```dockerfile
+```Dockerfile
 FROM node:18 as frontend-build
 # Set up npm dependencies
 WORKDIR /app
