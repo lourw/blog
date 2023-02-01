@@ -1,4 +1,4 @@
-site_name: Louierw Blog
+site_name: Louie's Blog
 
 theme:
   name: material
@@ -12,7 +12,7 @@ theme:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
+      primary: pink
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
