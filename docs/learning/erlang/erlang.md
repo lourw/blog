@@ -3,7 +3,7 @@ title: Erlang
 description: Overview of common themes when developing in Erlang
 ---
 
-This section is a little reminder to me about the conventions and best practices to use when coding in Erlang. I'm currently taking senior level university course on parallel programming and have a love-hate relationship with this functional language. 
+This section is a little reminder to me about the conventions and best practices to use when coding in Erlang. I'm currently taking senior level university course on parallel programming and have a love-hate relationship with this functional language. (Mostly love).
 
 ## Conventions
 ### Variables
@@ -37,7 +37,7 @@ Eshell
 ```
 
 ## If Statements
-If statements can control code flow based on the output of guard expressions
+`if` statements can control code flow based on the output of guard expressions
 
 ```erlang
 func(X) ->
