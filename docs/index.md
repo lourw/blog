@@ -1,6 +1,6 @@
 ---
 title: Home
-description: An brief summary of what this project was about
+description: My personal blog for techy stuff
 ---
 
 # Welcome to my Blog :wave:

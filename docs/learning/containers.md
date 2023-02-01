@@ -29,7 +29,7 @@ I love using this diagram to illustrate the difference between containers and vi
 
     In order to create a virtual machine, you need to allocate enough CPU, memory and storage for each of the VM operating systems. Setting up these operating systems can also be a slow process. If your app is lightweight, more resources may be going into running the VM rather than to supporting your application. 
 
-    Note: Hypervisor is just the software application that creates virtual machines. 
+    NOTE: Hypervisor is just the software application that creates virtual machines. 
 
 
 
@@ -54,7 +54,7 @@ I love using this diagram to illustrate the difference between containers and vi
 
     We use a container engine (Docker, Podman) to create multiple containers for our apps. All of these apps are isolated from each other in a similar fashion to the VM example. However, the container engine running the containers utilizes the underlying host's operating system and infrastructure. You use less resources creating the containers and therefore more of your compute resources can go to running your apps. 
 
-    Note: Because you are not mocking the underlying OS of the machine, differing architectures may make containers incompatible with certain systems. You cannot run an x86 architecture container on ARM computers for example. 
+    NOTE: Because you are not mocking the underlying OS of the machine, differing architectures may make containers incompatible with certain systems. You cannot run an x86 architecture container on ARM computers for example. 
 
 ## Terminology
 * **Image**: A "recipe" for creating a container
