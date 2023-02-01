@@ -9,7 +9,8 @@ I love using this diagram to illustrate the difference between containers and vi
 === "Virtual Machine"
     ```mermaid
     graph BT
-        A[Infrastructure] --> B
+        A[Infrastructure] --> Z
+        Z[Host OS] --> B
         B[Hypervisor] --> C
         subgraph C[VM1]
             direction BT    
@@ -52,14 +53,14 @@ I love using this diagram to illustrate the difference between containers and vi
         end
     ```
 
-    We use a container engine (Docker, Podman) to create multiple containers for our apps. All of these apps are isolated from each other in a similar fashion to the VM example. However, the container engine running the containers utilizes the underlying host's operating system and infrastructure. You use less resources creating the containers and therefore more of your compute resources can go to running your apps. 
+    We use a container engine ([Docker](https://www.docker.com/get-started/), [Podman](https://podman.io/)) to create multiple containers for our apps. All of these apps are isolated from each other in a similar fashion to the VM example. However, the container engine running the containers utilizes the underlying host's operating system and infrastructure. You use less resources creating the containers and therefore more of your compute resources can go to running your apps. 
 
     NOTE: Because you are not mocking the underlying OS of the machine, differing architectures may make containers incompatible with certain systems. You cannot run an x86 architecture container on ARM computers for example. 
 
 ## Terminology
 * **Image**: A "recipe" for creating a container  
 * **Container**: Lightweight and replicatable environments for code   
-* **Docker**: A service on your computer that enables you to create a run  called containers.   
+* **Docker**: A service on your computer that enables you to create a run  called containers   
 * **Dockerfile**: A file with steps for creating a container image
 
 ## What are containers used for?
