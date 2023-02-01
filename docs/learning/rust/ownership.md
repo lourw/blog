@@ -90,8 +90,11 @@ fn main() {
 ### References and Borrowing
 You can use the idea of references and borrowing to simplify process of transferring ownership repeatedly between values and functions. 
 
-> **Reference**: a pointer (immutable)
-> **Borrowing**: passing in a reference without transferring ownership. You cannot modify a value that is borrowed. 
+`reference`
+:   a pointer (immutable)
+
+`borrowing`
+:   passing in a reference without transferring ownership. You cannot modify a value that is borrowed. 
 
 ```rust 
 fn borrower(value: &String) -> u32 {

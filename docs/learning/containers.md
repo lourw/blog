@@ -58,10 +58,17 @@ I love using this diagram to illustrate the difference between containers and vi
     NOTE: Because you are not mocking the underlying OS of the machine, differing architectures may make containers incompatible with certain systems. You cannot run an x86 architecture container on ARM computers for example. 
 
 ## Terminology
-* **Image**: A "recipe" for creating a container  
-* **Container**: Lightweight and replicatable environments for code   
-* **Docker**: A service on your computer that enables you to create a run  called containers   
-* **Dockerfile**: A file with steps for creating a container image
+`images`
+:   A "recipe" for creating a container  
+
+`container`
+:   Lightweight and replicatable environments for code
+
+`Docker`
+:   A service on your computer that enables you to create a run  called containers
+
+`Dockerfile`
+:   A file with steps for creating a container image
 
 ## What are containers used for?
 - **Code Development**  
@@ -71,7 +78,7 @@ I love using this diagram to illustrate the difference between containers and vi
 
 ## Using Docker
 
-#### Command-line Commands
+### Command-line
 1. Build an image using your Dockerfile. This assumes two things
       1. You have a `Dockerfile` in the root directory of your local development folder
       2. You are calling the following command in the directory your Dockerfile is located in
@@ -88,7 +95,7 @@ I love using this diagram to illustrate the difference between containers and vi
 
     NOTE: `-it` creates an interactive terminal session you can use to interact with your container. 
 
-#### Dockerfile
+### Dockerfile
 When create your Dockerfile, here are the main steps involved:  
 
 1. Use a base image
@@ -125,7 +132,7 @@ When create your Dockerfile, here are the main steps involved:
 ## Multi-Stage Builds
 Sometimes you may want to break down your project into multiple stages to better organize and simplify the process. 
 
-## Example:
+### Example
 You have web-app that contains a backend and frontend. Your backend is written in Golang and your frontend uses React. You need to do the following:
 
 1. Build your backend server
@@ -134,7 +141,7 @@ You have web-app that contains a backend and frontend. Your backend is written i
 
 Assume the following file structure
 
-```bash
+``` bash title="Sample Project"
 .
 ├── backend/
 │   ├── go.mod
@@ -146,7 +153,7 @@ Assume the following file structure
 ```
 
 ### Sample Dockerfile
-```Dockerfile
+``` Dockerfile title="Dockerfile"
 FROM node:18 as frontend-build
 # Set up npm dependencies
 WORKDIR /app
