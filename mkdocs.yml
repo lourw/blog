@@ -7,12 +7,14 @@ theme:
     - navigation.tabs
     - content.tabs.link
     - navigation.indexes
+    - content.code.copy
+    - content.code.annotate
 
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: pink
+      primary: indigo
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
@@ -31,6 +33,8 @@ plugins:
 
 markdown_extensions:
   - attr_list
+  - def_list
+  - pymdownx.snippets
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
