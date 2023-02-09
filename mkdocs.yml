@@ -8,6 +8,7 @@ theme:
     - content.code.copy
     - content.tabs.link
     - navigation.indexes
+    - navigation.instant
     - navigation.tabs
 
   palette:
@@ -34,6 +35,7 @@ plugins:
 markdown_extensions:
   - attr_list
   - def_list
+  - footnotes
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.emoji:
