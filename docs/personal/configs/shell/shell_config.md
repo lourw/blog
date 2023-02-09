@@ -8,10 +8,10 @@ This is my default setup whenever I initiate a new shell on a computer
 You can change how your terminal prompt looks. 
 
 ``` bash
-lourw:02/08/23:~/Projects/development [main] ~ echo "Hello"
+lourw:02/08/23 ~/Projects/development [main] ~ echo "Hello"
 ```
 
-To achieve this, put the following in your .bashrc/.zshrc
+To achieve this, put the following in your .zshrc/.bashrc
 
 === "Zsh"
 	``` bash
@@ -22,7 +22,7 @@ To achieve this, put the following in your .bashrc/.zshrc
 	export PROMPT='%F{white}%n:%W%f%F{green} %~ $%f%F{cyan}(parse_git_branch)%f%F{green}'$'\n''~%f '
 	```
 === "Bash"
-	``` bash
+	``` bash title="Sourced from References"
 	function parse_git_branch() {
      		git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 	}
