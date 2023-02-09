@@ -1,5 +1,5 @@
 ---
-title: Shell Configurations
+title: Shell Configuration
 ---
 
 This is my default setup whenever I initiate a new shell on a computer
@@ -19,11 +19,11 @@ To achieve this, put the following in your .bashrc/.zshrc
 		git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/[\1]/p'
 	}
 	setopt PROMPT_SUBST
-	PROMPT='%{white}%n:%W%f%F{green} %~ $%f%F{cyan}$(parse_git_branch)%f%F{green}'$'\n''~%f '
+	export PROMPT='%F{white}%n:%W%f%F{green} %~ $%f%F{cyan}(parse_git_branch)%f%F{green}'$'\n''~%f '
 	```
 === "Bash"
-	```
-	parse_git_branch() {
+	``` bash
+	function parse_git_branch() {
      		git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 	}
 	export PS1="\u@\h \[\e[32m\]\w \[\e[91m\]\$(parse_git_branch)\[\e[00m\]$ "

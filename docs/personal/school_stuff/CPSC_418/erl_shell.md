@@ -40,3 +40,12 @@ Eshell
 > c("file.erl", [debug_info]).
 > debug.start().
 ```
+
+### Other tips
+In functional programming you cannot reassign variables once values are set. You can do this in the erlang shell:
+
+```erlang
+Eshell
+> X = 10.
+> f(X). % reset X so that you can bind a different value
+```
