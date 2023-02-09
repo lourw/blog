@@ -47,7 +47,7 @@ $$
 $$
 
 ##### Sequential Access
-You incur the penalty only when you first search for a set of data, then all following pages can just be found with T_transfer.
+You incur the penalty only when you first search for a set of data, then all following pages can just be found with $T_{transfer}$.
 
 $$
     T_{seqAccess} = (T_{seek} + T_{rotate}) + (T_{transfer} \cdot n_{pages})
