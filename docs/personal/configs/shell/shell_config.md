@@ -1,5 +1,5 @@
 ---
-title: Shell Configuration
+title: Shell Configurations
 ---
 
 This is my default setup whenever I initiate a new shell on a computer
