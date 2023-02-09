@@ -4,11 +4,11 @@ theme:
   name: material
 
   features:
-    - navigation.tabs
+    - content.code.annotate
+    - content.code.copy
     - content.tabs.link
     - navigation.indexes
-    - content.code.copy
-    - content.code.annotate
+    - navigation.tabs
 
   palette:
     # Palette toggle for light mode
@@ -28,16 +28,18 @@ theme:
         name: Switch to light mode
 
 plugins:
-  - search
   - git-revision-date-localized
+  - search
 
 markdown_extensions:
   - attr_list
   - def_list
-  - pymdownx.snippets
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.snippets 
   - pymdownx.superfences:
       custom_fences:
         # used for diagrams
@@ -46,8 +48,8 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
-  - pymdownx.arithmatex:
-      generic: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 extra_javascript:
   - javascripts/mathjax.js
