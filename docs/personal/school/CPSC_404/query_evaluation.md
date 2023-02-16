@@ -4,9 +4,9 @@ title: Query Evaluation
 
 ## Density of Indexes
 - indexing process
-  - choose a key to build an index on (department is not primary key -> sparse index)
-  - write the index entries as you iterate through all the data
-  - because of the way data is arranged, you will get your index entries in non sorted order
+    - choose a key to build an index on (department is not primary key -> sparse index)
+    - write the index entries as you iterate through all the data
+    - because of the way data is arranged, you will get your index entries in non sorted order
 
 - sparse index gets created when you index on a secondary key
 - dense index gets created when you index on a primary key

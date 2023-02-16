@@ -19,6 +19,11 @@ Let's first address why we use git. Think about the following situation:
 
 ### Rebasing
 
+#### Rebasing when your local branch is out of date
+```
+gitGraph
+    commit
+```
 ### Other Git Tools
 
 ## Remote Version Control
@@ -32,10 +37,11 @@ On your local machine:
 ``` bash
 git remote add origin <remote-url>
 ```
-
+- create a git repository by creating a folder and running `git init`. This will generate a `.git` folder (any folder with a `.git` folder in it is consiered a repository)
 - `git remote add` tells github that you want to link your local repository with a remote one
 - `origin <remote-urL>` is the alias for your remote repository and the link associated with it. In the future when you want to reference the remote, use `origin`. Technically you can choose any other word as this alias, but `origin` is the convention. 
 
+You are now ready to track changes in your repository!
 
 ### Pushing
 
