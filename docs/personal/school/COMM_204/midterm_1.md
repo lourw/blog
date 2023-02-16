@@ -1,6 +1,8 @@
 ---
-title: Queueing Analysis
+title: Midterm 1 - CPSC 204
 ---
+## Midterm Overview
+
 ## Single Server Process
 ``` mermaid
 flowchart LR
